@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+
+    animation: animateBg 60s linear infinite;
+    background-image: linear-gradient(310deg, #ff9191, #ffce63, #def2a0, #c6ee4a, #42eca6, #64b3d9, #208ea2, #498ada, #5b73df, #897ed3, #ff9191, #ffce63);
+    background-size: 100% 1100%;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Splash Screen */
+/* Add fade-out effect to the splash screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 3s ease forwards;
+    /* z-index: 9999; */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* splash screen txt logo */
+#logo {
+    border: 3px solid white;
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    line-height: 1.25;
+    border-radius: 15px;
+    font-size: 80px;
+    color: white;
+}
+
+/* Main Screen */
+/* Add fade-in effect to the main content */
+#main-content {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    /* z-index: 9999; */
+}
+
+.imgContainer {
+    /* background: linear-gradient(to bottom right, rgb(167, 189, 255), rgb(171, 255, 255), rgb(255, 159, 255), rgb(171, 255, 255), rgb(167, 189, 255)); */
+    height: auto;
+}
+
+/* main content img logo */
+.logo {
+    width: 250px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-position: 0 50%;
+}
+
+.greeting {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(45deg, rgb(0, 97, 223), rgb(120, 0, 195), rgb(195, 0, 195), rgb(203, 0, 0), green, rgb(0, 97, 223), rgb(0, 0, 230), rgb(0, 97, 223));
+    background-size: 400%;
+    animation: animateTxt 20s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animateTxt {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.subGreet {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    background: linear-gradient(45deg, rgb(106, 102, 102), rgb(41, 41, 41), rgb(229, 229, 229), rgb(83, 83, 83), rgb(41, 41, 41), rgb(229, 229, 229), rgb(106, 102, 102));
+    background-size: 300%;
+    animation: animateTxt 20s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contantContainer {
+    background: whitesmoke;
+    /* background: transparent; */
+    border-radius: 10px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #9c9c9c;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+    background: whitesmoke;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    color: #333;
+    padding: 0 15px;
+    background: transparent;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    border-radius: 5px !important;
+
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label,
+
+.input-group select:focus~label,
+.input-group select:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: whitesmoke;
+}
+
+.btn {
+    background: linear-gradient(135deg,#a364fb,#00ffff);
+    margin-top:20px;
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: #ffffff;
+    cursor: pointer;
+    height: 40px;
+    font-size: 13px;
+    border:transparent;
+}  
+
+.btn:hover{
+    background: linear-gradient(45deg,#a364fb,#00ffff); 
+
+    color: white;
+
+}
+
+
+@media (max-width: 991px) {
+
+    /* main content img logo */
+    .logo {
+        width: 200px;
+        height: 70px;
+        border-radius: 10px;
+
+    }
+
+    /* splash screen txt logo */
+    #logo {
+        border: 3px solid white;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 1.35;
+        border-radius: 15px;
+        font-size: 60px;
+    }
+}
